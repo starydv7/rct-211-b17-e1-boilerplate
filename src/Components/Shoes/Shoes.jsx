@@ -5,8 +5,7 @@ import {
   getShoesRequest,
   getShoesSuccess,
 } from "../../Redux/action";
-import axios
-  from "axios";
+import axios from "axios";
 
 const Shoes = () => {
  
@@ -22,8 +21,6 @@ const Shoes = () => {
       
             .catch((e) => dispatch(getShoesFailure(e)));
   }
- 
-  
     useEffect(() => {
          getShoes()
     }, []);

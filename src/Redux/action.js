@@ -6,7 +6,7 @@ import * as types from "./actionTypes";
         type: types.GET_SHOES_REQUEST
     };
 }
-  const getShoesSuccess = () => {
+  const getShoesSuccess = (payload) => {
     return {
         type: types.GET_SHOES_SUCCESS
     };
