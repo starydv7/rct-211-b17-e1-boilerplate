@@ -1,23 +1,19 @@
 //Create ActionCreator functions here
 import * as types from "./actionTypes";
 
- const getShoesRequest = () => {
-    return {
-        type: types.GET_SHOES_REQUEST
-    };
+const getShoesRequest =()=>{
+    return {type:types.GET_SHOES_REQUEST};
 }
-  const getShoesSuccess = (payload) => {
-    return {
-        type: types.GET_SHOES_SUCCESS
-    };
+
+const getShoesSuccess =(payload)=>{
+    return {type:types.GET_SHOES_SUCCESS,payload};
 }
- const getShoesFailure = () => {
-    return {
-        type: types.GET_SHOES_FAILURE
-    };
+const getShoesFailure =()=>{
+    return {type:types.GET_SHOES_FAILURE};
 }
+
 export {
-    getShoesFailure,
-    getShoesSuccess,
-    getShoesRequest
-}
+ getShoesFailure,
+ getShoesRequest,
+ getShoesSuccess,
+};
