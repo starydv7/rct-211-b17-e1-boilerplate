@@ -13,12 +13,12 @@ const ShoeCard = ({ id, name, image }) => {
  
   return (
     <div data-cy={`shoe-card-wrapper-${id}`}>
-      <img data-cy="shoe-card-image" alt="shoe" src={image}/>
+      <img style={{height:"250px",width:"100%",}} data-cy="shoe-card-image" alt="shoe" src={image}/>
       <div>
         <div data-cy="shoe-name">{name}</div>
         <div>
           In Cart:
-          <div data-cy="shoe-count">0</div>
+          <div data-cy="shoe-count"> {count}</div>
           <button data-cy="increment-shoe-count-button" onClick={handleAdd}>+</button>
           <button data-cy="decrement-shoe-count-button" onClick={handleSub}>-</button>
         </div>

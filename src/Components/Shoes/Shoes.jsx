@@ -17,7 +17,7 @@ const Shoes = () => {
   axios
   .get('http://localhost:8080/shoes')
   .then(r=> dispatch(getShoesSuccess(r.data))
-      // setData(r.data)
+      
   )
   .catch((e)=>dispatch(getShoesFailure(e)));
   }
@@ -27,9 +27,9 @@ const Shoes = () => {
   },[])
   console.log(shoes)
 
-  return <div>{/* Map through the shoes list here */} 
-   {shoes.map((product) => (
-          <ShoeCard key={product.id} {...product} />
+  return <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", height: "300px", width: "100%" }}>{/* Map through the shoes list here */} 
+   {shoes.map((p) => (
+          <ShoeCard key={p.id} {...p} />
         ))}
   </div>;
 };
