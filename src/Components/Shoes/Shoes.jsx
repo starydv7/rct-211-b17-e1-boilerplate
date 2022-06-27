@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getShoesFailure,
@@ -9,6 +9,7 @@ import axios
   from "axios";
 
 const Shoes = () => {
+ 
   
    const dispatch = useDispatch();
     const shoes = useSelector((state) => state.shoes);
@@ -17,20 +18,25 @@ const Shoes = () => {
         dispatch(getShoesRequest())
         axios
             .get("/shoes")
-            .then((r) => dispatch(getShoesSuccess(r.data)))
+          .then((r) => dispatch(getShoesSuccess(r.data)))
+      
             .catch((e) => dispatch(getShoesFailure(e)));
   }
-  
+ 
   
     useEffect(() => {
-        getShoes()
+         getShoes()
     }, []);
    console.log(shoes);
-  return (
-    <div>
-      <h3></h3>
-    </div>
-  )
+  // return (
+  //   <div>
+  //     {shoes.map((e) => {
+  //       <div>
+  //         <h4>{e.name}</h4>
+  //       </div>
+  //     }) }
+  //  </div>
+  // )
 };
 
 export default Shoes;
